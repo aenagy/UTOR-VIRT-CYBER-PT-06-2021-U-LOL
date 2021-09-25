@@ -38,25 +38,28 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function         | IP Address | Operating System |
-|----------|------------------|------------|------------------|
-| jump-box | Gateway          | 10.0.0.4   | Ubuntu Linux     |
-| web1     | DVWA web server  | 10.0.0.7   |        Ubuntu Linux          |
-| web2     | DVWA web server  | 10.0.0.8           |         Ubuntu Linux         |
-| web3     | DVWA web server   | 10.0.0.9           |               Ubuntu Linux   |
-| ELK1     | ELK (ElasticSearch Logstash Kibana) server  | 10.1.0.4           | Ubuntu Linux                 |
-
-
+| Name     | Function                                   | IP Address | Operating System |
+|----------|--------------------------------------------|------------|------------------|
+| jump-box | Gateway                                    | 10.0.0.4   | Ubuntu Linux     |
+| web1     | DVWA web server                            | 10.0.0.7   | Ubuntu Linux     |
+| web2     | DVWA web server                            | 10.0.0.8   | Ubuntu Linux     |
+| web3     | DVWA web server                            | 10.0.0.9   | Ubuntu Linux     |
+| ELK1     | ELK (ElasticSearch Logstash Kibana) server | 10.1.0.4   | Ubuntu Linux     |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the *jump-box* machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
+  - Answer: You are probably expecting an IPv4 address here. Instead, for security reasons, all I will say is that the output from "what is my ipv4 address" in Chrome running on my home PC will be used here.
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by *jump-box*.
+- TODO: _Which machine did you allow to access your ELK VM?_
+  - Answer: jump-box via ssh and <home router> ???
+
+- _What was its IP address?_
+  - 
 
 A summary of the access policies in place can be found in the table below.
 
