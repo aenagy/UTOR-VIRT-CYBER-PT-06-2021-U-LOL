@@ -1,10 +1,10 @@
-## Automated ELK Stack Deployment blah blah
+## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Images/Andrew_Nagy-week_13_homework-Infrastructure.drawio.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *Ansible Playbook ???* file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
 
@@ -23,9 +23,11 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly *available*, in addition to restricting *access* to the network.
 - _TODO: What aspect of security do load balancers protect?
+
 -- Answer: Availability
 
 - What is the advantage of a jump box?_
+
 -- Answer: Reduced attack surface due to only one entry point for management.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
