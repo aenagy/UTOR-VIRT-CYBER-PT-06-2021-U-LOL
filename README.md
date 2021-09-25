@@ -56,7 +56,7 @@ Only the *jump-box* machine can accept connections from the Internet. Access to 
 
 Machines within the network can only be accessed by *jump-box*.
 - TODO: _Which machine did you allow to access your ELK VM?_
-  - Answer: jump-box via ssh and < home router> ???
+  - Answer: jump-box via ssh and  &lthome router> ???
 
 - TODO: _What was its IP address?_
   - Answer: 10.0.0.4
@@ -65,11 +65,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | < home router>        |
+| Jump Box | Yes                 |  &lthome router>        |
 | web1     | No                  |  10.0.0.4 ??? |
 | web2     | No                  |  10.0.0.4 ??? |
 | web3     | No                  |  10.0.0.4 ??? |
-| ELK1     | Yes                 | 10.0.0.4, < home router> |
+| ELK1     | Yes                 | 10.0.0.4, &lthome router> |
 
 
 ### Elk Configuration
