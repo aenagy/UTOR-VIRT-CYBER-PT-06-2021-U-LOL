@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/Andrew_Nagy-week_13_homework-Infrastructure.drawio.png)
+![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *Ansible Playbook ???* file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -38,13 +38,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function                                   | IP Address | Operating System |
-|----------|--------------------------------------------|------------|------------------|
-| jump-box | Gateway                                    | 10.0.0.4   | Ubuntu Linux     |
-| web1     | DVWA web server                            | 10.0.0.7   | Ubuntu Linux     |
-| web2     | DVWA web server                            | 10.0.0.8   | Ubuntu Linux     |
-| web3     | DVWA web server                            | 10.0.0.9   | Ubuntu Linux     |
-| ELK1     | ELK (ElasticSearch Logstash Kibana) server | 10.1.0.4   | Ubuntu Linux     |
+| Name     | Function                                   | IP Address | Operating System     |
+|----------|--------------------------------------------|------------|----------------------|
+| jump-box | Gateway                                    | 10.0.0.4   | Linux (ubuntu 20.04) |
+| web1     | DVWA web server                            | 10.0.0.7   | Linux (ubuntu 20.04  |
+| web2     | DVWA web server                            | 10.0.0.8   | Linux (ubuntu 20.04) |
+| web3     | DVWA web server                            | 10.0.0.9   | Linux (ubuntu 20.04) |
+| ELK1     | ELK (ElasticSearch Logstash Kibana) server | 10.1.0.4   | Linux (ubuntu 20.04) |
 
 ### Access Policies
 
@@ -58,26 +58,34 @@ Machines within the network can only be accessed by *jump-box*.
 - TODO: _Which machine did you allow to access your ELK VM?_
   - Answer: jump-box via ssh and <home router> ???
 
-- _What was its IP address?_
-  - 
+- TODO: _What was its IP address?_
+  - Answer: 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | <home router>        |
+| web1     | No                  |  10.0.0.4 ??? |
+| web2     | No                  |  10.0.0.4 ??? |
+| web3     | No                  |  10.0.0.4 ??? |
+| ELK1     | Yes                 | 10.0.0.4, <home router> |
+
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _TODO: What is the main advantage of automating configuration with Ansible?_
+  - Answer: Repeatability.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+  - Set vm.max_map_count to 256 MB
+  - Install docker
+  - Install Python
+  - Download and launch ELK container
+  - Enable docker service
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
