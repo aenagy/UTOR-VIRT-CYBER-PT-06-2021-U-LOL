@@ -23,12 +23,10 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly *available*, in addition to restricting *access* to the network.
 - _TODO: What aspect of security do load balancers protect?
-
--- Answer: Availability
+  - Answer: Availability
 
 - What is the advantage of a jump box?_
-
--- Answer: Reduced attack surface due to only one entry point for management.
+  - Answer: Reduced attack surface due to only one entry point for management.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_
