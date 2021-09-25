@@ -56,7 +56,7 @@ Only the *jump-box* machine can accept connections from the Internet. Access to 
 
 Machines within the network can only be accessed by *jump-box*.
 - TODO: _Which machine did you allow to access your ELK VM?_
-  - Answer: jump-box via ssh and <home router> ???
+  - Answer: jump-box via ssh and < home router> ???
 
 - TODO: _What was its IP address?_
   - Answer: 10.0.0.4
@@ -65,11 +65,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | <home router>        |
+| Jump Box | Yes                 | < home router>        |
 | web1     | No                  |  10.0.0.4 ??? |
 | web2     | No                  |  10.0.0.4 ??? |
 | web3     | No                  |  10.0.0.4 ??? |
-| ELK1     | Yes                 | 10.0.0.4, <home router> |
+| ELK1     | Yes                 | 10.0.0.4, < home router> |
 
 
 ### Elk Configuration
@@ -94,12 +94,16 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
+  - Answer: 10.0.0.7, 10.0.0.8, 10.0.0.9
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
+  - Answer: filebeat and metric beat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+  - Answer: WIP
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
