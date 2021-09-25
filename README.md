@@ -25,22 +25,28 @@ Load balancing ensures that the application will be highly *available*, in addit
 - _TODO: What aspect of security do load balancers protect?
   - Answer: Availability
 
-- What is the advantage of a jump box?_
+- What is the advantage of a jump box?
   - Answer: Reduced attack surface due to only one entry point for management.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *application ???* and system *configuration ???*.
+- TODO: What does Filebeat watch for?
+  - Answer: Filebeat watches for changes to files, typically text files.
+
+- TODO: What does Metricbeat record?
+  - Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function         | IP Address | Operating System |
+|----------|------------------|------------|------------------|
+| jump-box | Gateway          | 10.0.0.4   | Ubuntu Linux     |
+| web1     | DVWA web server  | 10.0.0.7   |        Ubuntu Linux          |
+| web2     | DVWA web server  | 10.0.0.8           |         Ubuntu Linux         |
+| web3     | DVWA web server   | 10.0.0.9           |               Ubuntu Linux   |
+| ELK1     | ELK (ElasticSearch Logstash Kibana) server  | 10.1.0.4           | Ubuntu Linux                 |
+
+
 
 ### Access Policies
 
