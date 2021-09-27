@@ -71,10 +71,11 @@ Load balancing ensures that the application will be highly *available*, in addit
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *files* and system *metrics*.
 
 - _TODO: What does Filebeat watch for?_
-  - Answer: Filebeat watches for changes to files, typically text files.
+  - Answer: Filebeat watches for changes to files, typically text files. "Filebeat collects data about the file system." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
 
 - _TODO: What does Metricbeat record?_
-  - Answer: Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization.
+  - Answer: Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization. "Metricbeat collects machine metrics, such as uptime. A metric is simply a measurement about an aspect of a system that tells analysts how "healthy" it is." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
+
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -200,6 +201,6 @@ _TODO: Answer the following questions to fill in the blanks:_
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Answer:
     - Run: `ansible-playbook /etc/ansible/pentest.yml`
-    - Download Playbook:
+    - Download Playbook: `curl https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/Ansible/pentest.yml`
     - Update the file: `vi /etc/ansible/pentest.yml`
 
