@@ -8,6 +8,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - _TODO: Enter the playbook file._
 
+```
     ---
       - name: Class 12.3 Activity 3
         hosts: webservers
@@ -42,6 +43,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
           systemd:
             name: docker
             enabled: yes
+```
 
 
 This document contains the following details:
