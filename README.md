@@ -4,47 +4,47 @@ The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *Ansible Playbook ???* file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *Ansible Playbook* file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
     - Answer:
       - file /etc/ansible/playbooks/pentest.yml
 
 ```yaml
-    ---
-      - name: Class 12.3 Activity 3 Install DVWA
-        hosts: webservers
-        become: true
-        tasks:
-        - name: docker.io
-          apt:
-            update_cache: yes
-            name: docker.io
-            state: present
+---
+  - name: Class 12.3 Activity 3 Install DVWA
+    hosts: webservers
+    become: true
+    tasks:
+    - name: docker.io
+      apt:
+        update_cache: yes
+        name: docker.io
+        state: present
 
-        - name: Install pip3
-          apt:
-            force_apt_get: yes
-            name: python3-pip
-            state: present
+    - name: Install pip3
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
 
-        - name: Install Python Docker module
-          pip:
-            name: docker
-            state: present
+    - name: Install Python Docker module
+      pip:
+        name: docker
+        state: present
 
-        - name: Download and launch a docker web container
-          docker_container:
-            name: dvwa
-            image: cyberxsecurity/dvwa
-            state: started
-            restart_policy: always
-            published_ports: 80:80
+    - name: Download and launch a docker web container
+      docker_container:
+        name: dvwa
+        image: cyberxsecurity/dvwa
+        state: started
+        restart_policy: always
+        published_ports: 80:80
 
-        - name: Enable docker service
-          systemd:
-            name: docker
-            enabled: yes
+    - name: Enable docker service
+      systemd:
+        name: docker
+        enabled: yes
 ```
 
 
@@ -68,7 +68,7 @@ Load balancing ensures that the application will be highly *available*, in addit
 - _What is the advantage of a jump box?_
   - Answer: Reduced attack surface due to only one entry point for management.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *application ???* and system *configuration ???*.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *files* and system *metrics*.
 
 - _TODO: What does Filebeat watch for?_
   - Answer: Filebeat watches for changes to files, typically text files.
@@ -154,7 +154,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- _Copy the *id_rsa.pub* file to *each managed node, i.e. web server (web1, web2 and web3)???*._
+- _Copy the *id_rsa.pub* file to *each managed node, i.e. web server (web1, web2 and web3)*._
 - _Update the */etc/ansible/ansible.cfg* file to include..._
   - Answer:
     - `remote_user=ansibleadmin` # uncomment and edit this line, same user associated with *id_rsa.pub* above.
@@ -168,7 +168,7 @@ SSH into the control node and follow the steps below:
 10.0.0.9 ansible_python_interpreter=/usr/bin/python3
 ```
 
-- Run the playbook, and navigate to *each managed node, i.e. web server (web1, web2 and web3)???* to check that the installation worked as expected.
+- Run the playbook, and navigate to *each managed node, i.e. web server (web1, web2 and web3)* to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook?_
@@ -199,4 +199,7 @@ _TODO: Answer the following questions to fill in the blanks:_
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Answer:
-    - WIP
+    - Run: `ansible-playbook /etc/ansible/pentest.yml`
+    - Download Playbook:
+    - Update the file: `vi /etc/ansible/pentest.yml`
+
