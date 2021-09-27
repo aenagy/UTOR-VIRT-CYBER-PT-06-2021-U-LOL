@@ -74,7 +74,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
   - Answer: Filebeat watches for changes to files, typically text files.
 
 - _TODO: What does Metricbeat record?_
-  - Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization.
+  - Answer: Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -93,7 +93,7 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the *jump-box* machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
-  - Answer: You are probably expecting an IPv4 address here. Instead, for security reasons, all I will say is that the output from "what is my ipv4 address" in Chrome running on my home PC will be used here.
+  - Answer: You are probably expecting an IPv4 address here. Instead, for security reasons, all I will say is that the output from `what is my ipv4 address` in Chrome running on my home PC will be used here.
 
 Machines within the network can only be accessed by *jump-box*.
 - TODO: _Which machine did you allow to access your ELK VM?_
@@ -122,11 +122,12 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-  - Set vm.max_map_count to 256 MB
-  - Install docker
-  - Install Python
-  - Download and launch ELK container
-  - Enable docker service
+  - Answer:
+    - Set vm.max_map_count to 256 MB
+    - Install docker
+    - Install Python
+    - Download and launch ELK container
+    - Enable docker service
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -156,7 +157,7 @@ SSH into the control node and follow the steps below:
 - _Copy the *id_rsa.pub* file to *each managed node, i.e. web server (web1, web2 and web3)???*._
 - _Update the */etc/ansible/ansible.cfg* file to include..._
   - Answer:
-    - remote_user=ansibleadmin # uncomment this line, same user associated with *id_rsa.pub* above.
+    - `remote_user=ansibleadmin` # uncomment and edit this line, same user associated with *id_rsa.pub* above.
 
 - _Update the */etc/ansible/hosts* file to include..._
   - Answer:
@@ -198,3 +199,4 @@ _TODO: Answer the following questions to fill in the blanks:_
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Answer:
+    - WIP
