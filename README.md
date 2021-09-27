@@ -7,10 +7,12 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *Ansible Playbook ???* file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
+    - Answer:
+      - file /etc/ansible/playbooks/pentest.yml
 
-```
+```yaml
     ---
-      - name: Class 12.3 Activity 3
+      - name: Class 12.3 Activity 3 Install DVWA
         hosts: webservers
         become: true
         tasks:
@@ -60,17 +62,18 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly *available*, in addition to restricting *access* to the network.
-- _TODO: What aspect of security do load balancers protect?
+- _TODO: What aspect of security do load balancers protect?_
   - Answer: Availability
 
-- What is the advantage of a jump box?
+- _What is the advantage of a jump box?_
   - Answer: Reduced attack surface due to only one entry point for management.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *application ???* and system *configuration ???*.
-- TODO: What does Filebeat watch for?
+
+- _TODO: What does Filebeat watch for?_
   - Answer: Filebeat watches for changes to files, typically text files.
 
-- TODO: What does Metricbeat record?
+- _TODO: What does Metricbeat record?_
   - Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization.
 
 The configuration details of each machine may be found below.
@@ -94,7 +97,7 @@ Only the *jump-box* machine can accept connections from the Internet. Access to 
 
 Machines within the network can only be accessed by *jump-box*.
 - TODO: _Which machine did you allow to access your ELK VM?_
-  - Answer: jump-box via ssh and  \<home router public IP> ???
+  - Answer: jump-box via ssh and  \<home router public IP>
 
 - TODO: _What was its IP address?_
   - Answer: 10.0.0.4
@@ -103,10 +106,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 |  \<home router public IP>        |
-| web1     | No                  |  10.0.0.4 ??? |
-| web2     | No                  |  10.0.0.4 ??? |
-| web3     | No                  |  10.0.0.4 ??? |
+| Jump Box | Yes                 |  \<home router public IP> |
+| web1     | No                  |  10.0.0.7 |
+| web2     | No                  |  10.0.0.8 |
+| web3     | No                  |  10.0.0.9 |
 | ELK1     | Yes                 | 10.0.0.4, \<home router public IP> |
 
 
@@ -114,7 +117,8 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _TODO: What is the main advantage of automating configuration with Ansible?_
-  - Answer: Repeatability.
+  - Answer: Automation.
+
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
@@ -136,7 +140,7 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
-  - Answer: filebeat and metric beat
+  - Answer: filebeat and metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
