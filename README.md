@@ -8,6 +8,42 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - _TODO: Enter the playbook file._
 
+    ---
+      - name: Class 12.3 Activity 3
+        hosts: webservers
+        become: true
+        tasks:
+        - name: docker.io
+          apt:
+            update_cache: yes
+            name: docker.io
+            state: present
+
+        - name: Install pip3
+          apt:
+            force_apt_get: yes
+            name: python3-pip
+            state: present
+
+        - name: Install Python Docker module
+          pip:
+            name: docker
+            state: present
+
+        - name: Download and launch a docker web container
+          docker_container:
+            name: dvwa
+            image: cyberxsecurity/dvwa
+            state: started
+            restart_policy: always
+            published_ports: 80:80
+
+        - name: Enable docker service
+          systemd:
+            name: docker
+            enabled: yes
+
+
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
