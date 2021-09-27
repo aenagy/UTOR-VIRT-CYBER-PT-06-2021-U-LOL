@@ -12,6 +12,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 
 ![TODO: Update the path with the name of your diagram](all_playbooks.yml)
+[all_playbooks.yml](https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/all_playbooks.yml)
+
 
 ```yaml
 ---
@@ -204,8 +206,6 @@ _TODO: Answer the following questions to fill in the blanks:_
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Answer:
     - Run: `ansible-playbook /etc/ansible/pentest.yml`
-    - Download a Playbook: `cd /etc/ansible && curl https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/Ansible/pentest.yml`
-    - Download consolidated Playbook: `cd /etc/ansible && curl https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/Ansible/all_playbooks.yml`
-    - Update a Playbook file: `vi /etc/ansible/pentest.yml`
+    - Download consolidated Playbook: `cd /etc/ansible && curl https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/all_playbooks.yml`
     - Update consolidated Playbook file: `vi /etc/ansible/all_playbooks.yml`
     - Create consolidated Playbook file: `find /etc/ansible/playbooks/ /etc/ansible/roles/ -iname *.yml -exec cat {}>> all_playbooks.txt \;`
