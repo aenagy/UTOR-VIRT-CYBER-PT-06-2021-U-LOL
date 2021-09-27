@@ -156,10 +156,12 @@ SSH into the control node and follow the steps below:
 
 - _Update the */etc/ansible/hosts* file to include..._
   - Answer:
-    - '[webservers] # uncomment this line'
-    - '10.0.0.7 ansible_python_interpreter=/usr/bin/python3'
-    - '10.0.0.8 ansible_python_interpreter=/usr/bin/python3'
-    - '10.0.0.9 ansible_python_interpreter=/usr/bin/python3'
+```
+[webservers] # uncomment this line
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+10.0.0.8 ansible_python_interpreter=/usr/bin/python3
+10.0.0.9 ansible_python_interpreter=/usr/bin/python3
+```
 
 - Run the playbook, and navigate to *each managed node, i.e. web server (web1, web2 and web3)???* to check that the installation worked as expected.
 
@@ -181,8 +183,10 @@ _TODO: Answer the following questions to fill in the blanks:_
   - Answer:
     - Edit /etc/ansible/hosts
     - Add these lines:
-    - '[elk]'
-    - '10.1.0.4 ansible_python_interpreter=/usr/bin/python3'
+```
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+```
 
 - _Which URL do you navigate to in order to check that the ELK server is running?_
   - Answer:
