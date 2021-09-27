@@ -4,11 +4,14 @@ The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *Ansible Playbook* file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *all_playbooks.yml* file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
     - Answer:
       - file /etc/ansible/playbooks/pentest.yml
+
+
+![TODO: Update the path with the name of your diagram](all_playbooks.yml)
 
 ```yaml
 ---
@@ -147,7 +150,7 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
   - Answer: "Beats is a free and open platform for single-purpose data shippers. They send data from hundreds or thousands of machines and systems to Logstash or Elasticsearch." https://www.elastic.co/beats/
-    - filebeat: " Filebeat helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files." https://www.elastic.co/beats/filebeat
+    - filebeat: "Filebeat helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files." https://www.elastic.co/beats/filebeat
     - metricbeat: "Metricbeat is a lightweight way to send system and service statistics." https://www.elastic.co/beats/metricbeat
 
 
@@ -201,6 +204,8 @@ _TODO: Answer the following questions to fill in the blanks:_
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Answer:
     - Run: `ansible-playbook /etc/ansible/pentest.yml`
-    - Download Playbook: `curl https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/Ansible/pentest.yml`
-    - Update the file: `vi /etc/ansible/pentest.yml`
-
+    - Download a Playbook: `cd /etc/ansible && curl https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/Ansible/pentest.yml`
+    - Download consolidated Playbook: `cd /etc/ansible && curl https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/Ansible/all_playbooks.yml`
+    - Update a Playbook file: `vi /etc/ansible/pentest.yml`
+    - Update consolidated Playbook file: `vi /etc/ansible/all_playbooks.yml`
+    - Create consolidated Playbook file: `find /etc/ansible/playbooks/ /etc/ansible/roles/ -iname *.yml -exec cat {}>> all_playbooks.txt \;`
