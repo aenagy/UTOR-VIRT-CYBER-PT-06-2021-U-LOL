@@ -2,11 +2,11 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+![Diagram of ELK solution:](Images/diagram_filename.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the *all_playbooks.yml* file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  - _Enter the playbook file._
     - Answer:
 [all_playbooks.yml](https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/all_playbooks.yml)
 
@@ -229,7 +229,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly *available*, in addition to restricting *access* to the network.
-- _TODO: What aspect of security do load balancers protect?_
+- _What aspect of security do load balancers protect?_
   - Answer: Availability
 
 - _What is the advantage of a jump box?_
@@ -237,10 +237,10 @@ Load balancing ensures that the application will be highly *available*, in addit
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *files* and system *metrics*.
 
-- _TODO: What does Filebeat watch for?_
+- _What does Filebeat watch for?_
   - Answer: Filebeat watches for changes to files, typically text files. "Filebeat collects data about the file system." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
 
-- _TODO: What does Metricbeat record?_
+- _What does Metricbeat record?_
   - Answer: Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization. "Metricbeat collects machine metrics, such as uptime. A metric is simply a measurement about an aspect of a system that tells analysts how "healthy" it is." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
 
 
@@ -260,14 +260,14 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the *jump-box* machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+- _Add whitelisted IP addresses_
   - Answer: You are probably expecting an IPv4 address here. Instead, for security reasons, all I will say is that the output from `what is my ipv4 address` in Chrome running on my home PC will be used here.
 
 Machines within the network can only be accessed by *jump-box*.
-- TODO: _Which machine did you allow to access your ELK VM?_
+- _Which machine did you allow to access your ELK VM?_
   - Answer: jump-box via ssh and  \<home router public IP>
 
-- TODO: _What was its IP address?_
+- _What was its IP address?_
   - Answer: 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
@@ -284,12 +284,12 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- _What is the main advantage of automating configuration with Ansible?_
   - Answer: Automation.
 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- _In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
   - Answer:
     - Set vm.max_map_count to 256 MB
     - Install docker
@@ -300,19 +300,19 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- _List the IP addresses of the machines you are monitoring_
   - Answer: 10.0.0.7, 10.0.0.8, 10.0.0.9
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- _Specify which Beats you successfully installed_
   - Answer: filebeat and metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- _In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
   - Answer: "Beats is a free and open platform for single-purpose data shippers. They send data from hundreds or thousands of machines and systems to Logstash or Elasticsearch." https://www.elastic.co/beats/
     - filebeat: "Filebeat helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files." https://www.elastic.co/beats/filebeat
     - metricbeat: "Metricbeat is a lightweight way to send system and service statistics." https://www.elastic.co/beats/metricbeat
@@ -338,7 +338,7 @@ SSH into the control node and follow the steps below:
 
 - Run the playbook, and navigate to *each managed node, i.e. web server (web1, web2 and web3)* to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
+_Answer the following questions to fill in the blanks:_
 - _Which file is the playbook?_
   - Answer:
     - /etc/ansible/playbooks/pentest.yml # used to install DVWA on web servers
