@@ -56,7 +56,7 @@ Only the *jump-box* machine can accept connections from the Internet. Access to 
 
 Machines within the network can only be accessed by *jump-box*.
 - TODO: _Which machine did you allow to access your ELK VM?_
-  - Answer: jump-box via ssh and  \<home router> ???
+  - Answer: jump-box via ssh and  \<home router public IP> ???
 
 - TODO: _What was its IP address?_
   - Answer: 10.0.0.4
@@ -65,11 +65,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 |  \<home router>        |
+| Jump Box | Yes                 |  \<home router public IP>        |
 | web1     | No                  |  10.0.0.4 ??? |
 | web2     | No                  |  10.0.0.4 ??? |
 | web3     | No                  |  10.0.0.4 ??? |
-| ELK1     | Yes                 | 10.0.0.4, \<home router> |
+| ELK1     | Yes                 | 10.0.0.4, \<home router public IP> |
 
 
 ### Elk Configuration
@@ -102,20 +102,53 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-  - Answer: WIP
+  - Answer: "Beats is a free and open platform for single-purpose data shippers. They send data from hundreds or thousands of machines and systems to Logstash or Elasticsearch." https://www.elastic.co/beats/
+    - filebeat: " Filebeat helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files." https://www.elastic.co/beats/filebeat
+    - metricbeat: "Metricbeat is a lightweight way to send system and service statistics." https://www.elastic.co/beats/metricbeat
 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- _Copy the *id_rsa.pub* file to *each managed node, i.e. web server (web1, web2 and web3)???*._
+- _Update the */etc/ansible/ansible.cfg* file to include..._
+  - Answer:
+    - remote_user=ansibleadmin # uncomment this line, same user associated with *id_rsa.pub* above.
+
+- _Update the */etc/ansible/hosts* file to include..._
+  - Answer:
+    - '[webservers] # uncomment this line'
+    - '10.0.0.7 ansible_python_interpreter=/usr/bin/python3'
+    - '10.0.0.8 ansible_python_interpreter=/usr/bin/python3'
+    - '10.0.0.9 ansible_python_interpreter=/usr/bin/python3'
+
+- Run the playbook, and navigate to *each managed node, i.e. web server (web1, web2 and web3)???* to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Which file is the playbook?_
+  - Answer:
+    - /etc/ansible/playbooks/pentest.yml # used to install DVWA on web servers
+    - /etc/ansible/playbooks/install-elk.yml # used to install ELK on ELK1 server
+
+- _Where do you copy it?_
+  - Answer:
+    - /etc/ansible/playbooks
+
+- _Which file do you update to make Ansible run the playbook on a specific machine?_
+  - Answer:
+    - /etc/ansible/hosts
+
+- _How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+  - Answer:
+    - Edit /etc/ansible/hosts
+    - Add these lines:
+    - '[elk]'
+    - '10.1.0.4 ansible_python_interpreter=/usr/bin/python3'
+
+- _Which URL do you navigate to in order to check that the ELK server is running?_
+  - Answer:
+
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+  - Answer:
