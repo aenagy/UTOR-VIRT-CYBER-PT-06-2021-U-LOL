@@ -13,7 +13,6 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 ```yaml
 ---
----
   - name: Class 12.3 Activity 3
     hosts: webservers
     become: true
