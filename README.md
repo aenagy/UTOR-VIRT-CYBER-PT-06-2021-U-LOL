@@ -8,10 +8,6 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - _TODO: Enter the playbook file._
     - Answer:
-      - file /etc/ansible/playbooks/pentest.yml
-
-
-![TODO: Update the path with the name of your diagram](all_playbooks.yml)
 [all_playbooks.yml](https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/all_playbooks.yml)
 
 
