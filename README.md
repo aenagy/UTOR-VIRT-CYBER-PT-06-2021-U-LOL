@@ -163,8 +163,6 @@ These files have been tested and used to generate a live ELK deployment on Azure
       state: directory
       owner: root
 
-
-
   - name: Copy metricbeat-7.4.0-amd64.deb metric from Ansible Server to managed node
     ansible.builtin.copy:
       src: /etc/ansible/files/metricbeat-7.4.0-amd64.deb
@@ -238,10 +236,14 @@ Load balancing ensures that the application will be highly *available*, in addit
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the *files* and system *metrics*.
 
 - _What does Filebeat watch for?_
-  - Answer: Filebeat watches for changes to files, typically text files. "Filebeat collects data about the file system." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
+  - Answer:
+    - Filebeat watches for changes to files, typically text files.
+    - "Filebeat collects data about the file system." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
 
 - _What does Metricbeat record?_
-  - Answer: Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization. "Metricbeat collects machine metrics, such as uptime. A metric is simply a measurement about an aspect of a system that tells analysts how "healthy" it is." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
+  - Answer:
+    - Metricbeat records ativity within the operating system or hardware such as processor or memory or storage utilization.
+    - "Metricbeat collects machine metrics, such as uptime. A metric is simply a measurement about an aspect of a system that tells analysts how "healthy" it is." https://utoronto.bootcampcontent.com/utoronto-bootcamp/utor-virt-cyber-pt-06-2021-u-lol/-/blob/master/13-Elk-Stack-Project/StudentGuide.md
 
 
 The configuration details of each machine may be found below.
@@ -265,7 +267,7 @@ Only the *jump-box* machine can accept connections from the Internet. Access to 
 
 Machines within the network can only be accessed by *jump-box*.
 - _Which machine did you allow to access your ELK VM?_
-  - Answer: jump-box via ssh and  \<home router public IP>
+  - Answer: jump-box via ssh and  output from `what is my ipv4 address`
 
 - _What was its IP address?_
   - Answer: 10.0.0.4
@@ -274,33 +276,32 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 |  \<home router public IP> |
+| Jump Box | Yes                 |  output from `what is my ipv4 address` |
 | web1     | No                  |  10.0.0.7 |
 | web2     | No                  |  10.0.0.8 |
 | web3     | No                  |  10.0.0.9 |
-| ELK1     | Yes                 | 10.0.0.4, \<home router public IP> |
+| ELK1     | Yes                 | 10.0.0.4, output from `what is my ipv4 address` |
 
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _What is the main advantage of automating configuration with Ansible?_
-  - Answer: Automation.
+  - Answer: Consistency and Repeatability.
 
 
 The playbook implements the following tasks:
 - _In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-  - Answer:
+  - Answer: from 'Class 12.3 Activity 3' in [all_playbooks.yml](https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/all_playbooks.yml)
     - Set vm.max_map_count to 256 MB
     - Install docker
     - Install Python
     - Download and launch ELK container
     - Enable docker service
 
-
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![Output from 'docker ps':](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:

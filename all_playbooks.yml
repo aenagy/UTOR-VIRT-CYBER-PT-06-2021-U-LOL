@@ -149,8 +149,6 @@
       state: directory
       owner: root
 
-
-
   - name: Copy metricbeat-7.4.0-amd64.deb metric from Ansible Server to managed node
     ansible.builtin.copy:
       src: /etc/ansible/files/metricbeat-7.4.0-amd64.deb
