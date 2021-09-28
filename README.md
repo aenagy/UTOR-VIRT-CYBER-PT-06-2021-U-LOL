@@ -251,7 +251,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function                                   | IP Address | Operating System     |
 |----------|--------------------------------------------|------------|----------------------|
-| jump-box | Gateway                                    | 10.0.0.4   | Linux (ubuntu 20.04) |
+| jump-box | Managementy gateway                        | 10.0.0.4   | Linux (ubuntu 20.04) |
 | web1     | DVWA web server                            | 10.0.0.7   | Linux (ubuntu 20.04  |
 | web2     | DVWA web server                            | 10.0.0.8   | Linux (ubuntu 20.04) |
 | web3     | DVWA web server                            | 10.0.0.9   | Linux (ubuntu 20.04) |
@@ -364,6 +364,7 @@ _Answer the following questions to fill in the blanks:_
 
 - _Which URL do you navigate to in order to check that the ELK server is running?_
   - Answer:
+    - `http://<IP address of ELK1 server>:5601/app/kibana`
 
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
