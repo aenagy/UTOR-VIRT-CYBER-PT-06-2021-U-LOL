@@ -32,7 +32,7 @@
       systemd:
         name: docker
         enabled: yes
----
+
 - name: Class 13.1
   hosts: elk
   become: true
@@ -76,7 +76,6 @@
       enabled: yes
       state: restarted
 
----
 - name: Setup filebeats
   hosts: webservers
   remote_user: ansibleadmin
@@ -131,7 +130,7 @@
       enabled: yes
       state: started
       use: service
----
+
 - name: Setup metricbeats
   hosts: webservers
   remote_user: ansibleadmin

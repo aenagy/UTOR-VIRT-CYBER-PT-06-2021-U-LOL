@@ -46,7 +46,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
       systemd:
         name: docker
         enabled: yes
----
+
 - name: Class 13.1
   hosts: elk
   become: true
@@ -90,7 +90,6 @@ These files have been tested and used to generate a live ELK deployment on Azure
       enabled: yes
       state: restarted
 
----
 - name: Setup filebeats
   hosts: webservers
   remote_user: ansibleadmin
@@ -145,7 +144,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
       enabled: yes
       state: started
       use: service
----
+
 - name: Setup metricbeats
   hosts: webservers
   remote_user: ansibleadmin
@@ -342,8 +341,7 @@ SSH into the control node and follow the steps below:
 _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook?_
   - Answer:
-    - /etc/ansible/playbooks/pentest.yml # used to install DVWA on web servers
-    - /etc/ansible/playbooks/install-elk.yml # used to install ELK on ELK1 server
+    - [all_playbooks.yml](https://raw.githubusercontent.com/aenagy/UTOR-VIRT-CYBER-PT-06-2021-U-LOL/main/all_playbooks.yml)
 
 - _Where do you copy it?_
   - Answer:
@@ -355,11 +353,15 @@ _Answer the following questions to fill in the blanks:_
 
 - _How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   - Answer:
-    - Edit /etc/ansible/hosts
-    - Add these lines:
+    1. Edit /etc/ansible/hosts
+    2. Add a group name in square brackets and enter each node hostname or IP on each following line like so:
 ```
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+```
+   3. In the Ansible Playbook YAML file include the `hosts` keyword like so:
+```
+  hosts: elk
 ```
 
 - _Which URL do you navigate to in order to check that the ELK server is running?_
