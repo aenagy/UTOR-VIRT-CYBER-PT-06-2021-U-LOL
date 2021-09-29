@@ -355,10 +355,10 @@ _Answer the following questions to fill in the blanks:_
   - Answer:
     1. Edit /etc/ansible/hosts
     2. Add a group name in square brackets and enter each node hostname or IP on each following line like so:
-      # `[elk]`
-      # `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
+      - `[elk]`
+      - `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
     3. In the Ansible Playbook YAML file include the `hosts` keyword like so:
-      # `hosts: elk`
+      - `hosts: elk`
 
 - _Which URL do you navigate to in order to check that the ELK server is running?_
   - Answer:
