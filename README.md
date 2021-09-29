@@ -353,15 +353,15 @@ _Answer the following questions to fill in the blanks:_
 
 - _How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   - Answer:
-  1. Edit /etc/ansible/hosts
-  2. Add a group name in square brackets and enter each node hostname or IP on each following line like so:
+1. Edit /etc/ansible/hosts
+2. Add a group name in square brackets and enter each node hostname or IP on each following line like so:
 
 ```yaml
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
 
-   3. In the Ansible Playbook YAML file include the `hosts` keyword like so:
+3. In the Ansible Playbook YAML file include the `hosts` keyword like so:
 
 ```yaml
   hosts: elk
