@@ -359,7 +359,7 @@ _Answer the following questions to fill in the blanks:_
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
-   3. In the Ansible Playbook YAML file include the `hosts` keyword like so:
+    3. In the Ansible Playbook YAML file include the `hosts` keyword like so:
 ```
   hosts: elk
 ```
